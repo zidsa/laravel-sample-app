@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ZidAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('auth/zid', [ZidAuthController::class, 'redirectToZid'])->name('auth.redirect.zid');
+Route::get('auth/zid/callback', [ZidAuthController::class, 'callbackFromZid'])->name('auth.callback.zid');
