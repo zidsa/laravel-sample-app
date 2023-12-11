@@ -18,7 +18,7 @@ class ZidAuthController extends Controller
             'redirect_uri' => env('APP_URL') . "/auth/zid/callback",
             'response_type' => 'code'
         ]);
-        return redirect('https://oauth.zid.sa' . '/oauth/authorize?' . $queries);
+        return redirect(self::OAUTH_URL . 'oauth/authorize?' . $queries);
     }
 
     public function callbackFromZid(Request $request)
