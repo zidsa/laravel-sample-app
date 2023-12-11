@@ -41,6 +41,10 @@ class ZidAuthController extends Controller
             // create a new user.
         }
 
+        // by reaching here, the OAuth flow has been finished, and zid merchant now should be able to access your application.
+        // continue with your own logic from now on please.
+        //
+        //
         // login your user and redirect him to your application dashboard.
         // auth()->login($user);
         return redirect()->route('index');
